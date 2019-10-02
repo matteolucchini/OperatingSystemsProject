@@ -4,11 +4,9 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Rows: ");
-        int row = sc.nextInt();
-        System.out.print("Cols: ");
-        int col = sc.nextInt();
-        int mat[][] = createMatrix(row, col);
+        System.out.print("# of rows & cols (N x N): ");
+        int dim = sc.nextInt();
+        int mat[][] = createMatrix(dim, dim);
         ReadMatrix m = new ReadMatrix(mat);
         m.startElaboration();
     }
