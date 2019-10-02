@@ -19,6 +19,7 @@ public class ReadMatrix extends AbstractReadMatrix {
         }
     }
 
+    // TODO: somma degli elementi delle colonne
     public void startElaboration() {
         try {
             for(RowElaboration row : rows)
