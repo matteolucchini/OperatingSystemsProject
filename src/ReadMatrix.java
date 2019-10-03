@@ -18,8 +18,7 @@ public class ReadMatrix extends AbstractReadMatrix {
             rows[i] = new RowElaboration(mat[i], latch, b, i);
         }
     }
-
-    // TODO: somma degli elementi delle colonne
+    
     public void startElaboration() {
         try {
             for(RowElaboration row : rows)
