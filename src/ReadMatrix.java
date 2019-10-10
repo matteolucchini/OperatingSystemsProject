@@ -1,5 +1,9 @@
 import java.util.concurrent.CountDownLatch;
 
+/**
+ * @author Matteo Lucchini
+ */
+
 public class ReadMatrix extends AbstractReadMatrix {
     private RowElaboration[] rows;
     private CountDownLatch latch;
@@ -18,7 +22,7 @@ public class ReadMatrix extends AbstractReadMatrix {
             rows[i] = new RowElaboration(mat[i], latch, b, i);
         }
     }
-    
+
     public void startElaboration() {
         try {
             for(RowElaboration row : rows)
@@ -52,6 +56,10 @@ public class ReadMatrix extends AbstractReadMatrix {
         }
     }
 
+    /**
+     *
+     * @return total sum between rows
+     */
     protected int totSum() {
         int tot = 0;
         for(int n : b.getSumSharedBuffer())
@@ -59,6 +67,10 @@ public class ReadMatrix extends AbstractReadMatrix {
         return tot;
     }
 
+    /**
+     *
+     * @return total sum of the elements on the diagonal
+     */
     protected int totDiagSum() {
         int tot = 0;
         for(int n : b.getDiagonalSharedBuffer())
